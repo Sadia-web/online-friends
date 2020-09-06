@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Comment from '../Comment/Comment';
+import { Container, Box } from '@material-ui/core';
+import './PostDetail.css';
 
 const PostDetail = () => {
     const {postId} = useParams();
@@ -12,15 +14,16 @@ const PostDetail = () => {
         .then(data =>setPost(data))
     }, [])
     return (
-        <div>
-            <h1>This is post details of: {post.id}</h1>
-            <p>User Id: {post.userId}</p>
+        <Container>
+            <Box className="post-style">
+            <h2 className="total-post">Post details of ID: {post.id}</h2>
+            <h5>User Id: {post.userId}</h5>
             <h5>Post Title: {post.title}</h5>
-            <h2>Post Body: {post.body}</h2>
-            <hr/>
-            <h1>These are comments</h1>
-            <Comment postid={postId}></Comment>
-        </div>
+            <h5>Post Body: {post.body}</h5>
+            </Box>
+            <h2 className="total-post">These are comments</h2>
+            <Comment id={postId}></Comment>
+        </Container>
     );
 };
 

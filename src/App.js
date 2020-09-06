@@ -21,7 +21,7 @@ function App() {
         <PostDetail></PostDetail>
       </Route>
       <Route exact path="/">
-            <Home />
+        <Home/>
       </Route>
       <Route path="*">
         <NoMatch></NoMatch>

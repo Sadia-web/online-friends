@@ -5,7 +5,7 @@ const Comment = (props) => {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/comments?postId=${props.postid}`)
+        fetch(`https://jsonplaceholder.typicode.com/comments?postId=${props.id}`)
         .then(res => res.json())
         .then(data => setComments(data))
     },[])
